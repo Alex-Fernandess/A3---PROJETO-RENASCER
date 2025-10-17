@@ -6,8 +6,6 @@ import { cadastroUsuario, signInComContaGoogle } from '../../../back-end/Api';
 import Topo from '../../../components/topo';
 
 
-
-
 export default function CadastroUsuarios() {
     const router = useRouter();
 
@@ -30,24 +28,22 @@ export default function CadastroUsuarios() {
         }
     }, [senha, confirmarSenha])
 
-
-
     const verificarCadastroUsuario = async () => {
-        if (senha === confirmarSenha) {
-            try {
-                const user = await cadastroUsuario(email, senha);
-                if (user) {
-                    router.push('/');
-                }
-            } catch (error: any) {
-                console.error(error.code);
-                console.error(error.message);
+    if (senha === confirmarSenha) {
+        try {
+            
+            const user = await cadastroUsuario(email, senha, nome, cpf, telefone, dataNascimento);
+            if (user) {
+                router.push('/');
             }
-        } else {
-            console.warn('Falha ao cadastrar usuario. Senhas divergentes');
+        } catch (error: any) {
+            console.error(error.code);
+            console.error(error.message);
         }
-
+    } else {
+        console.warn('Falha ao cadastrar usuario. Senhas divergentes');
     }
+}
 
     const loginComGoogle = async () => {
         try {
