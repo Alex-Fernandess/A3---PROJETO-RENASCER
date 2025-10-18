@@ -72,7 +72,8 @@ export default function Login() {
                   value={email}
                   onChangeText={setEmail}
                   placeholder='E-mail'
-                  placeholderTextColor={'rgba(0,0,0,0.5)'} secureTextEntry={false} />
+                  placeholderTextColor={'rgba(0,0,0,0.5)'} secureTextEntry={false} 
+                />
               </View>
 
 

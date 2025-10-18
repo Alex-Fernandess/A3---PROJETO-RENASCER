@@ -12,21 +12,24 @@ export default function Topo() {
       <View style={styles.topoPagina}>
         <View style={styles.topoPaginaEsquerda}>
 
-
-          <View style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignContent: 'center',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: 10
-          }}>
+        
+          <TouchableOpacity 
+            onPress={() => router.push('/')}
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignContent: 'center',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 10
+            }}
+          >
             <Image style={styles.logo} source={require('../assets/images/Logo.png')} />
             <View>
               <Text style={styles.textoLogo}>Renascer</Text>
               <Text style={styles.subtituloLogo}>Especialista em Burnout</Text>
             </View>
-          </View>
+          </TouchableOpacity>
 
 
           <TouchableOpacity onPress={() => { }}>
@@ -59,7 +62,7 @@ export default function Topo() {
 
         </View>
         <View style={styles.topoPaginaDireita}>
-          <TouchableOpacity onPress={() => { }} style={styles.botaoAgendamentoEntrar}>
+          <TouchableOpacity onPress={() => router.push('/screens/ListaDeProfissionais')} style={styles.botaoAgendamentoEntrar}>
             <MaterialCommunityIcons name='calendar' size={24} color='#FFFFFF' />
             <Text style={styles.textoBotaoAgendamentoEntrar}>Agendar Consulta</Text>
           </TouchableOpacity>

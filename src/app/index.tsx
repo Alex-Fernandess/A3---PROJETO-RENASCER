@@ -6,37 +6,37 @@ import Topo from '../../components/topo';
 
 export default function Index() {
   return (
-    <ScrollView>
-    <View>
-    <View style={{marginTop: 10, marginBottom: 10}} >
-      <Topo/>
-    </View>
-    <View>
-    <Banner/>
-    </View>
-    <View>
-    <Explicacao/>
-    </View>
-    <View>
-      <Relatos/>
-    </View>
-    </View>
+    <ScrollView style={styles.scrollView}>
+      <View style={styles.container}>
+        <View style={styles.topContainer}>
+          <Topo/>
+        </View>
+        <View>
+          <Banner/>
+        </View>
+        <View>
+          <Explicacao/>
+        </View>
+        <View>
+          <Relatos/>
+        </View>
+      </View>
     </ScrollView>
-    /*
-    <View style={{flex: 1}}>
-      <Login/>
-    </View>
-  
-    */
-  )
+  );
 }
-const styles = StyleSheet.create(
-  {
-    scrollView:{
 
-      flex:1,
-      overflowY: 'scroll',
-      overflowX: 'hidden',
-    }
-  }
-)
+const styles = StyleSheet.create({
+  scrollView: {
+    flex: 1,
+    overflowY: 'scroll',
+    overflowX: 'hidden',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  topContainer: {
+    marginTop: 10,
+    marginBottom: 10,
+  },
+});
